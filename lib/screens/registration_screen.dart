@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatefulWidget {
+  static const String screenId = '/register';
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -16,12 +18,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Image.asset('images/logo.png'),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                height: 200.0,
+                child: Image.asset('images/logo.png'),
+              ),
+            ),
+            Center(
+              child: Text(
+                'Flash Chat',
+                style: TextStyle(
+                  fontSize: 35.0,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.teal,
+                ),
+              ),
             ),
             SizedBox(
-              height: 48.0,
+              height: 45.0,
             ),
             TextField(
               onChanged: (value) {
@@ -29,6 +44,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               },
               decoration: InputDecoration(
                 hintText: 'Enter your email',
+                hintStyle: TextStyle(
+                  color: Colors.grey,
+                ),
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
@@ -53,6 +71,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               },
               decoration: InputDecoration(
                 hintText: 'Enter your password',
+                hintStyle: TextStyle(
+                  color: Colors.grey,
+                ),
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
